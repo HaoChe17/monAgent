@@ -1,0 +1,48 @@
+2017-09-24 16:04:46.462|INFO|main:start the agent……
+2017-09-24 16:05:29.023|INFO|main:start the agent……
+2017-10-03 10:24:20.170|DEBUG|main:the pid of tomcat_pinpoint_web is:null
+2017-10-03 10:24:20.181|DEBUG|main:the gcCommand of tomcat_pinpoint_web is:/usr/java/jdk1.8.0_65/bin/jstat -gc null
+2017-10-03 10:24:20.197|DEBUG|main:gcJsonInfo:{null"ASE":"123","DFSD":"343","DFSD":"13","SDFSD":"2342","SDFSD":"233","WE4SD":"233","SDFSD":"234","SDFS":"-","SDF":"234","SDF":"RT","SDF":"-"}
+2017-10-03 10:24:52.974|DEBUG|main:the pid of tomcat_pinpoint_web is:null
+2017-10-03 10:24:52.975|DEBUG|main:the gcCommand of tomcat_pinpoint_web is:/usr/java/jdk1.8.0_65/bin/jstat -gc null
+2017-10-03 10:24:52.977|DEBUG|main:gcJsonInfo:{null"ASE":"123","DFSD":"343","DFSD":"13","SDFSD":"2342","SDFSD":"233","WE4SD":"233","SDFSD":"234","SDFS":"-","SDF":"234","SDF":"RT","SDF":"-"}
+2017-10-03 10:25:26.550|DEBUG|main:the pid of tomcat_pinpoint_web is:null
+2017-10-03 10:25:26.551|DEBUG|main:the gcCommand of tomcat_pinpoint_web is:/usr/java/jdk1.8.0_65/bin/jstat -gc null
+2017-10-03 10:25:26.553|DEBUG|main:gcJsonInfo:{"ASE":"123","DFSD":"343","DFSD":"13","SDFSD":"2342","SDFSD":"233","WE4SD":"233","SDFSD":"234","SDFS":"-","SDF":"234","SDF":"RT","SDF":"-"}
+2017-10-03 10:56:09.660|DEBUG|main:the pid of pinpoint is:
+2017-10-03 10:56:09.661|DEBUG|main:the gcCommand of null is:/usr/java/jdk1.7.0_79/bin/jstat/bin/jstat -gc pinpoint
+2017-10-03 10:56:09.663|DEBUG|main:gcJsonInfo:{"ASE":"123","DFSD":"343","DFSD":"13","SDFSD":"2342","SDFSD":"233","WE4SD":"233","SDFSD":"234","SDFS":"-","SDF":"234","SDF":"RT","SDF":"-"}
+2017-10-03 10:57:40.012|DEBUG|main:the pid of pinpoint is:
+2017-10-03 10:57:40.014|DEBUG|main:the gcCommand of null is:/usr/java/jdk1.7.0_79/bin/jstat/bin/jstat -gc pinpoint
+2017-10-03 10:57:40.017|DEBUG|main:gcJsonInfo:{"ASE":"123","DFSD":"343","DFSD":"13","SDFSD":"2342","SDFSD":"233","WE4SD":"233","SDFSD":"234","SDFS":"-","SDF":"234","SDF":"RT","SDF":"-"}
+2017-10-03 11:01:42.236|DEBUG|RMI TCP Connection(6)-172.18.20.166:the pid of pinpoint is:
+2017-10-03 11:01:42.262|DEBUG|RMI TCP Connection(6)-172.18.20.166:the gcCommand of null is:/usr/java/jdk1.7.0_79/bin/jstat/bin/jstat -gc pinpoint
+2017-10-03 11:01:42.287|DEBUG|RMI TCP Connection(6)-172.18.20.166:gcJsonInfo:{"ASE":"123","DFSD":"343","DFSD":"13","SDFSD":"2342","SDFSD":"233","WE4SD":"233","SDFSD":"234","SDFS":"-","SDF":"234","SDF":"RT","SDF":"-"}
+2017-10-03 11:03:56.030|DEBUG|RMI TCP Connection(4)-172.18.20.166:the pid of pinpoint is:
+2017-10-03 11:03:56.031|DEBUG|RMI TCP Connection(4)-172.18.20.166:the gcCommand of null is:/usr/java/jdk1.7.0_79/bin/jstat/bin/jstat -gc pinpoint
+2017-10-03 11:03:56.033|DEBUG|RMI TCP Connection(4)-172.18.20.166:gcJsonInfo:{"ASE":"123","DFSD":"343","DFSD":"13","SDFSD":"2342","SDFSD":"233","WE4SD":"233","SDFSD":"234","SDFS":"-","SDF":"234","SDF":"RT","SDF":"-"}
+2017-10-03 11:07:22.091|DEBUG|RMI TCP Connection(4)-172.18.20.166:the pid of pinpoint is:
+2017-10-03 11:07:22.093|DEBUG|RMI TCP Connection(4)-172.18.20.166:the gcCommand of null is:/usr/java/jdk1.7.0_79/bin/jstat/bin/jstat -gc pinpoint
+2017-10-03 11:07:22.095|DEBUG|RMI TCP Connection(4)-172.18.20.166:gcJsonInfo:{"ASE":"123","DFSD":"343","DFSD":"13","SDFSD":"2342","SDFSD":"233","WE4SD":"233","SDFSD":"234","SDFS":"-","SDF":"234","SDF":"RT","SDF":"-"}
+2017-10-03 16:57:44.214|INFO|main:rmi binds the port 12121 success！
+2017-10-03 16:58:04.649|ERROR|RMI TCP Connection(4)-172.18.20.166:Cannot run program "/bin/sh": CreateProcess error=2, 系统找不到指定的文件。
+2017-10-03 16:59:52.968|INFO|main:rmi binds the port 12121 success！
+2017-10-03 17:00:15.203|DEBUG|RMI TCP Connection(4)-172.18.20.166:the pid of tomcat_pinpoint_collector is:
+2017-10-03 17:00:15.205|DEBUG|RMI TCP Connection(4)-172.18.20.166:the gcCommand of  is:/usr/java/jdk1.8.0_65/bin/jstat -gc 
+2017-10-03 17:00:44.579|DEBUG|RMI TCP Connection(6)-172.18.20.166:the pid of tomcat_pinpoint_collector is:
+2017-10-03 17:00:44.580|DEBUG|RMI TCP Connection(6)-172.18.20.166:the gcCommand of  is:/usr/java/jdk1.8.0_65/bin/jstat -gc 
+2017-10-03 17:01:15.527|INFO|main:rmi binds the port 12121 success！
+2017-10-03 17:01:22.143|DEBUG|RMI TCP Connection(4)-172.18.20.166:the pid of tomcat_pinpoint_collector is:
+2017-10-03 17:01:45.133|DEBUG|RMI TCP Connection(4)-172.18.20.166:the gcCommand of  is:/usr/java/jdk1.8.0_65/bin/jstat -gc 
+2017-10-03 17:04:52.243|INFO|main:rmi binds the port 12121 success！
+2017-10-03 17:04:56.728|DEBUG|RMI TCP Connection(4)-172.18.20.166:the pid of tomcat_pinpoint_collector is:
+2017-10-03 17:04:56.744|DEBUG|RMI TCP Connection(4)-172.18.20.166:the gcCommand of  is:/usr/java/jdk1.8.0_65/bin/jstat -gc 
+2017-10-03 17:06:28.053|INFO|main:rmi binds the port 12121 success！
+2017-10-03 17:06:33.608|DEBUG|RMI TCP Connection(4)-172.18.20.166:the pid of tomcat_pinpoint_collector is:
+2017-10-03 17:06:33.610|DEBUG|RMI TCP Connection(4)-172.18.20.166:the gcCommand of  is:/usr/java/jdk1.8.0_65/bin/jstat -gc 
+2017-10-03 17:06:33.617|DEBUG|RMI TCP Connection(4)-172.18.20.166:gcJsonInfo:{"ASE":"123","DFSD":"343","DFSD":"13","SDFSD":"2342","SDFSD":"233","WE4SD":"233","SDFSD":"234","SDFS":"-","SDF":"234","SDF":"RT","SDF":"-"}
+2017-10-03 17:06:33.618|DEBUG|RMI TCP Connection(4)-172.18.20.166:allJsonInfo is : {"time":1507021593609,"monitorInfo":{"jvmInfo":{"ASE":"123","DFSD":"343","DFSD":"13","SDFSD":"2342","SDFSD":"233","WE4SD":"233","SDFSD":"234","SDFS":"-","SDF":"234","SDF":"RT","SDF":"-"},"osInfo":null,"appStatInfo":null}}
+2017-10-03 17:06:33.621|DEBUG|RMI TCP Connection(4)-172.18.20.166:the pid of tomcat_pinpoint_collector is:
+2017-10-03 17:06:33.621|DEBUG|RMI TCP Connection(4)-172.18.20.166:the gcCommand of  is:/usr/java/jdk1.7.0_79/bin/jstat -gc 
+2017-10-03 17:06:33.622|DEBUG|RMI TCP Connection(4)-172.18.20.166:gcJsonInfo:{"ASE":"123","DFSD":"343","DFSD":"13","SDFSD":"2342","SDFSD":"233","WE4SD":"233","SDFSD":"234","SDFS":"-","SDF":"234","SDF":"RT","SDF":"-"}
+2017-10-03 17:06:33.622|DEBUG|RMI TCP Connection(4)-172.18.20.166:allJsonInfo is : {"time":1507021593621,"monitorInfo":{"jvmInfo":{"ASE":"123","DFSD":"343","DFSD":"13","SDFSD":"2342","SDFSD":"233","WE4SD":"233","SDFSD":"234","SDFS":"-","SDF":"234","SDF":"RT","SDF":"-""ASE":"123","DFSD":"343","DFSD":"13","SDFSD":"2342","SDFSD":"233","WE4SD":"233","SDFSD":"234","SDFS":"-","SDF":"234","SDF":"RT","SDF":"-"},"osInfo":null,"appStatInfo":null}}
