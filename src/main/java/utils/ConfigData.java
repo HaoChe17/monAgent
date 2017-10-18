@@ -19,7 +19,7 @@ public class ConfigData {
 	
 	//获取os信息
 	public static String osMonitorType="os";//判断需要获取的监控数据是否为os
-	public static String devCommand="iostat -dx -k";//iostat命令，用于获取磁盘IO信息
+	public static String devCommand="iostat -dx -k -c 1 2";//iostat命令，用于获取磁盘IO信息
 	public static String devKeyPrefix="Device";//判断是否为磁盘列名行的关键字。此行以“Device”字符串开头
 	public static String memCommand="free -k";//free命令，用于获取系统内存信息
 	public static String memKeyKeyWords="total";//判断是否为内存数据（free命令）的列名行。此行以包含“total”关键字

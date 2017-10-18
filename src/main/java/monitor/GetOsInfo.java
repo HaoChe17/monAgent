@@ -42,20 +42,24 @@ public class GetOsInfo {
 		int devMapKeyserial=1;
 		String devMapKeyPrefix="device";
 		String tmpInfo="";
+		int DataNum=0;
 		try{
 			for(String str:devInfo_array){
-				if(str.length()>4 && str.substring(0,6).equals(ConfigData.devKeyPrefix)){
-					devInfoKey=new GetSpecialDelimiterStr().getSpecialStr(str, delimiter);
-					exitDevice=true;
-					devInfoKey_array=devInfoKey.split(delimiter);
-					Log.writeLog("debug","devKeyStr:"+devInfoKey);
-					continue;
-				}else if(exitDevice && str.length()>4){
-					tmpInfo=new GetSpecialDelimiterStr().getSpecialStr(str, delimiter);
-					devsInfo_map.put(devMapKeyPrefix+devMapKeyserial, tmpInfo.split(delimiter));
-					Log.writeLog("debug",devMapKeyPrefix+devMapKeyserial+":"+tmpInfo);
-					devMapKeyserial++;
-					continue;
+				if(str.length()>4 && str.substring(0,6).equals(ConfigData.devKeyPrefix))DataNum++;
+				if(DataNum==2){
+					if(str.length()>4 && str.substring(0,6).equals(ConfigData.devKeyPrefix)){
+						devInfoKey=new GetSpecialDelimiterStr().getSpecialStr(str, delimiter);
+						exitDevice=true;
+						devInfoKey_array=devInfoKey.split(delimiter);
+						Log.writeLog("debug","devKeyStr:"+devInfoKey);
+						continue;
+					}else if(exitDevice && str.length()>4){
+						tmpInfo=new GetSpecialDelimiterStr().getSpecialStr(str, delimiter);
+						devsInfo_map.put(devMapKeyPrefix+devMapKeyserial, tmpInfo.split(delimiter));
+						Log.writeLog("debug",devMapKeyPrefix+devMapKeyserial+":"+tmpInfo);
+						devMapKeyserial++;
+						continue;
+					}
 				}
 			}
 		}catch(Exception e){
