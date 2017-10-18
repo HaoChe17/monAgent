@@ -6,7 +6,7 @@ import utils.GetSpecialDelimiterStr;
 import utils.Log;
 
 public class GetAppInfo {
-	public static String pidstatCmd=ConfigData.pidstatCmd;
+	public static String pidstatCmd;
 	private static String delimiter=ConfigData.delimiter;
 	/**
 	 * 根据pidstat命令，获取应用本身的信息
@@ -15,8 +15,9 @@ public class GetAppInfo {
 	 */
 	public String getAppInfo(String pid){
 		String appInfoJson="";
-		String appInfo=new ExecShellCmd().exec(pidstatCmd+pid);
-		Log.writeLog("debug", "the pidstatCmd of "+pid+" is:"+pidstatCmd+pid);
+		pidstatCmd=ConfigData.pidstatCmdPrefix+pid+ConfigData.pidstatCmdPrePost;
+		String appInfo=new ExecShellCmd().exec(pidstatCmd);
+		Log.writeLog("debug", "the pidstatCmd of "+pid+" is:"+pidstatCmd);
 		Log.writeLog("debug", "the pidstatCmd's executing result is:  "+appInfo);
 		
 		//把pidstat命令的结果，根据换行符分割成数组

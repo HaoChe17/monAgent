@@ -32,6 +32,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/Java/jre1.8.0_91"/>
+	<classpathentry kind="lib" path="D:/Java/jdk1.8.0_131/jre1.8.0_91"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
