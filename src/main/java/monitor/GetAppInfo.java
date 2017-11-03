@@ -9,7 +9,7 @@ public class GetAppInfo {
 	public static String pidstatCmd;
 	private static String delimiter=ConfigData.delimiter;
 	/**
-	 * 根据pidstat命令，获取应用本身的信息
+	 * 鏍规嵁pidstat鍛戒护锛岃幏鍙栧簲鐢ㄦ湰韬殑淇℃伅
 	 * @param pid
 	 * @return
 	 */
@@ -19,12 +19,12 @@ public class GetAppInfo {
 		String appInfo=new ExecShellCmd().exec(pidstatCmd);
 		Log.writeLog("debug", "the pidstatCmd of "+pid+" is:"+pidstatCmd);
 		Log.writeLog("debug", "the pidstatCmd's executing result is:  "+appInfo);
-		
-		//把pidstat命令的结果，根据换行符分割成数组
+
+		//鎶妏idstat鍛戒护鐨勭粨鏋滐紝鏍规嵁鎹㈣绗﹀垎鍓叉垚鏁扮粍
 		String[] appInfo_array=appInfo.split(ConfigData.newLineSeparator);
 		String appInfoKey="";
 		String appInfoValue="";
-		//从结果数组中，筛选出需要的结果
+		//浠庣粨鏋滄暟缁勪腑锛岀瓫閫夊嚭闇�瑕佺殑缁撴灉
 		try{
 			for(String str:appInfo_array){
 				if(str.length()<5)continue;
@@ -40,15 +40,15 @@ public class GetAppInfo {
 		}catch(Exception e){
 			Log.writeLog("error", e.getMessage());
 		}
-		
-		
+
+
 		String[] appInfoKey_array=appInfoKey.split(delimiter);
 		String[] appInfoValue_array=appInfoValue.split(delimiter);
 		if(appInfoKey_array.length != appInfoValue_array.length){
 			Log.writeLog("error", "get gcInfo is wrong! gcKeyInfo=["+appInfoKey+"],gcValueStr="+appInfoValue);
 		}
-		
-		//把结果组装成json格式的字符串
+
+		//鎶婄粨鏋滅粍瑁呮垚json鏍煎紡鐨勫瓧绗︿覆
 		for(int i=0;i<appInfoKey_array.length;i++){
 			appInfoJson=appInfoJson+'"'+appInfoKey_array[i]+"\":"+'"'+appInfoValue_array[i]+'"';
 			if(i!=appInfoKey_array.length-1)appInfoJson+=",";

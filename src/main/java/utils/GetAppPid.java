@@ -3,7 +3,7 @@ package utils;
 /**
  * get the pid of the application
  * @author chehao
- * @version 2017Äê9ÔÂ27ÈÕ ÏÂÎç8:58:47
+ * @version 2017å¹´9æœˆ27æ—¥ ä¸‹åˆ8:58:47
  */
 public class GetAppPid {
 	public static String getAppPid(String appKeyWord){

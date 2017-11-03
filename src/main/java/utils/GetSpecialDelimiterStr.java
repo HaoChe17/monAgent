@@ -1,15 +1,15 @@
 package utils;
 /**
- * °Ñ×Ö·û´®ÖĞµÄÁ¬ĞøµÄ¿Õ¸ñ»òtab»òtabÓë¿Õ¸ñµÄ×éºÏ»»³ÉÖ¸¶¨µÄ×Ö·û
+ * æŠŠå­—ç¬¦ä¸²ä¸­çš„è¿ç»­çš„ç©ºæ ¼æˆ–tabæˆ–tabä¸ç©ºæ ¼çš„ç»„åˆæ¢æˆæŒ‡å®šçš„å­—ç¬¦
  * @author chehao
- * @version 2017Äê9ÔÂ28ÈÕ ÏÂÎç10:10:33
+ * @version 2017å¹´9æœˆ28æ—¥ ä¸‹åˆ10:10:33
  */
 public class GetSpecialDelimiterStr {
 	public String getSpecialStr(String targetStr,String delimiter){
 		char[] ch_array=targetStr.toCharArray();
 		String newStr="";
 		String tmpStr="";
-		//ÌáÈ¡³ö·Ç¿Õ¸ñÓëtabµÄ×Ö·û£¬²¢ÓëÖ¸¶¨µÄ·Ö¸ô·û×é³ÉĞÂµÄ×Ö·û´®
+		//æå–å‡ºéç©ºæ ¼ä¸tabçš„å­—ç¬¦ï¼Œå¹¶ä¸æŒ‡å®šçš„åˆ†éš”ç¬¦ç»„æˆæ–°çš„å­—ç¬¦ä¸²
 		for(char ar:ch_array){
 			if(ar==" ".toCharArray()[0] || ar=="	".toCharArray()[0]){
 				if(!tmpStr.equals("")){

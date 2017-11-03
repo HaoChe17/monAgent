@@ -5,14 +5,14 @@ import utils.GetAppPid;
 import utils.Log;
 
 /**
- * Í¨¹ı´ËÀà£¬¿ÉÒÔ»ñÈ¡ËùÓĞµÄ¼à¿ØĞÅÏ¢
+ * é€šè¿‡æ­¤ç±»ï¼Œå¯ä»¥è·å–æ‰€æœ‰çš„ç›‘æ§ä¿¡æ¯
  * @author chehao
- * @version 2017Äê10ÔÂ3ÈÕ ÉÏÎç10:28:03
+ * @version 2017å¹´10æœˆ3æ—¥ ä¸Šåˆ10:28:03
  */
 public class GetAllInfo {
-	
+
 	/**
-	 * »ñÈ¡ËùÓĞ¼à¿ØĞÅÏ¢£¬ÕûÀíÎªjson£¬²¢·µ»Ø
+	 * è·å–æ‰€æœ‰ç›‘æ§ä¿¡æ¯ï¼Œæ•´ç†ä¸ºjsonï¼Œå¹¶è¿”å›
 	 * @param jdkPath
 	 * @param appKeyWord
 	 * @param infoType
@@ -24,37 +24,37 @@ public class GetAllInfo {
 		if(jdkPath==null)Log.writeLog("error", "the parameter 'jdkPath' of '"+appName+"' is null!");
 		if(appName==null)Log.writeLog("error", "the parameter 'appKeyWord' "+" is null!");
 		if(infoType==null)Log.writeLog("info", "the parameter 'infoType' "+" is null! The default value is 'all'");
-		
+
 //		String pid="";
 		String pid=GetAppPid.getAppPid(appKeyWord).replace("\n", "").replace("\n\r", "");
 		Log.writeLog("debug", "the pid of "+appKeyWord+" is:"+pid);
-		
-		
-		//»ñÈ¡¼à¿ØĞÅÏ¢µÄÊ±¼ä£º
+
+
+		//è·å–ç›‘æ§ä¿¡æ¯çš„æ—¶é—´ï¼š
 		String currentTime=System.currentTimeMillis()+"";
-		
-		//»ñÈ¡JVM¼à¿ØĞÅÏ¢£º
+
+		//è·å–JVMç›‘æ§ä¿¡æ¯ï¼š
 		String jstatCmd=jdkPath+ConfigData.jstatBin;
 		String jvmInfo=null;
 		if(infoType.contains(ConfigData.jvmMonitorType)){
 			jvmInfo=new GetJvmInfo().getJvmInfo(jstatCmd, pid);
 		}
-		
-		//»ñÈ¡ÏµÍ³ĞÅÏ¢£º
+
+		//è·å–ç³»ç»Ÿä¿¡æ¯ï¼š
 		String osInfo=null;
 		if(infoType.contains(ConfigData.osMonitorType)){
 			osInfo=new GetOsInfo().getOsInfo();
 		}
-		
-		
-		//»ñÈ¡Ó¦ÓÃpidstatĞÅÏ¢£º
+
+
+		//è·å–åº”ç”¨pidstatä¿¡æ¯ï¼š
 		String appStatInfo=null;
 		if(infoType.contains(ConfigData.appMonitorType)){
 			appStatInfo=new GetAppInfo().getAppInfo(pid);
 		}
-		
-		
-		//×é×°³ÉjsonÊı¾İ£º
+
+
+		//ç»„è£…æˆjsonæ•°æ®ï¼š
 		allJsonInfo+="\"time\":"+currentTime+",\"monitorInfo\":{\"jvmInfo\":"+jvmInfo+",\"osInfo\":"+osInfo+",\"appStatInfo\":"+appStatInfo+"}}";
 		Log.writeLog("debug", "allJsonInfo is : "+allJsonInfo);
 		return allJsonInfo;

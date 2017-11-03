@@ -9,15 +9,15 @@ import utils.GetExceptionDetalInfo;
 import utils.GetSpecialDelimiterStr;
 import utils.Log;
 
-/**»ñÈ¡ÏµÍ³¼à¿ØÊı¾İ
- * 
+/**è·å–ç³»ç»Ÿç›‘æ§æ•°æ®
+ *
  * @author chehao
- * @version 2017Äê10ÔÂ7ÈÕ ÉÏÎç9:43:40
+ * @version 2017å¹´10æœˆ7æ—¥ ä¸Šåˆ9:43:40
  */
 public class GetOsInfo {
-	
+
 	private static String delimiter=ConfigData.delimiter;
-	
+
 	public String getOsInfo(){
 		String disk=getDiskInfo();
 		String mem=getMemInfo();
@@ -26,7 +26,7 @@ public class GetOsInfo {
 	}
 
 	/**
-	 * »ñÈ¡´ÅÅÌÉè±¸IOĞÅÏ¢
+	 * è·å–ç£ç›˜è®¾å¤‡IOä¿¡æ¯
 	 * @return
 	 */
 	private String getDiskInfo(){
@@ -34,7 +34,7 @@ public class GetOsInfo {
 		String devCommand=ConfigData.devCommand;
 		String devInfo_str=new ExecShellCmd().exec(devCommand);
 		String[] devInfo_array=devInfo_str.split(ConfigData.newLineSeparator);
-		
+
 		String devInfoKey="";
 		String[] devInfoKey_array=null;
 		boolean exitDevice=false;
@@ -65,14 +65,14 @@ public class GetOsInfo {
 		}catch(Exception e){
 			Log.writeLog("error", new GetExceptionDetalInfo().getExceptionDetail(e));
 		}
-		
-		
-		//ÅĞ¶Ï½á¹û½âÎöÊÇ·ñÕıÈ·
+
+
+		//åˆ¤æ–­ç»“æœè§£ææ˜¯å¦æ­£ç¡®
 		if(devInfoKey_array.length != devsInfo_map.get(devMapKeyPrefix+(devMapKeyserial-1)).length){
 			Log.writeLog("error", "get devInfo is wrong! devKeyInfo=["+devInfoKey+"],devValueStr="+tmpInfo);
 		}
-		
-		//×é×°json
+
+		//ç»„è£…json
 		int devsNum=devMapKeyserial-1;
 		devJsonInfo="\"diskNum\":"+devsNum;
 		String[] dev_array=null;
@@ -87,15 +87,15 @@ public class GetOsInfo {
 		}
 		String diskLoadInfo="\"diskLoadInfo\":{"+devJsonInfo+"}";
 		Log.writeLog("debug", "diskLoadInfo:"+"\"devsInfo\":{"+diskLoadInfo+"}");
-		
-		//»ñÈ¡´ÅÅÌ¿Õ¼ä´óĞ¡£º
+
+		//è·å–ç£ç›˜ç©ºé—´å¤§å°ï¼š
 		String diskSpaceInfo="\"diskSpaceInfo\":"+getDiskSpace();
-		
+
 		return "\"disksInfo\":{"+diskLoadInfo+","+diskSpaceInfo+"}";
 	}
-	
+
 	/**
-	 * »ñÈ¡´ÅÅÌ¿Õ¼ä´óĞ¡ĞÅÏ¢
+	 * è·å–ç£ç›˜ç©ºé—´å¤§å°ä¿¡æ¯
 	 * @return
 	 */
 	private String getDiskSpace(){
@@ -103,8 +103,8 @@ public class GetOsInfo {
 		String diskSpaceCommand=ConfigData.diskSpaceCommand;
 		String diskSpaceInfo_str=new ExecShellCmd().exec(diskSpaceCommand);
 		String[] diskSpaceInfo_array=diskSpaceInfo_str.split(ConfigData.newLineSeparator);
-		
-		//½âÎö»ñÈ¡µ½µÄÊı¾İ
+
+		//è§£æè·å–åˆ°çš„æ•°æ®
 		String diskSpaceInfoKey="";
 		String[] diskSpaceInfoKey_array=null;
 		boolean keyFlag=false;
@@ -132,13 +132,13 @@ public class GetOsInfo {
 		}catch(Exception e){
 			Log.writeLog("error", new GetExceptionDetalInfo().getExceptionDetail(e));
 		}
-		
-		//ÅĞ¶Ï½á¹û½âÎöÊÇ·ñÕıÈ·
+
+		//åˆ¤æ–­ç»“æœè§£ææ˜¯å¦æ­£ç¡®
 		if(diskSpaceInfoKey_array.length-1 != diskSpaceInfo_map.get(""+(diskSpaceMapKeyserial-1)).length){
 			Log.writeLog("error", "get devInfo is wrong! diskSpaceKeyInfo=["+diskSpaceInfoKey+"],diskSpaceValueStr="+tmpInfo);
 		}
-		
-		//×é×°json
+
+		//ç»„è£…json
 		for(int i=0;i<diskSpaceMapKeyserial;i++){
 			String[] SpacePerDisk=diskSpaceInfo_map.get(i+"");
 			diskSpaceJsonInfo+="\""+SpacePerDisk[0]+"\":{";
@@ -154,9 +154,9 @@ public class GetOsInfo {
 		Log.writeLog("debug", "diskSpaceInfo is:{"+diskSpaceJsonInfo+"}");
 		return "{"+diskSpaceJsonInfo+"}";
 	}
-	
+
 	/**
-	 * »ñÈ¡CPUĞÅÏ¢
+	 * è·å–CPUä¿¡æ¯
 	 * @return
 	 */
 	private String getCpuInfo(){
@@ -164,13 +164,13 @@ public class GetOsInfo {
 		String cpuCommand=ConfigData.cpuCommand;
 		String cpuInfo_str=new ExecShellCmd().exec(cpuCommand);
 		String[] cpuInfo_array=cpuInfo_str.split(ConfigData.newLineSeparator);
-		
+
 		String cpuInfoKey="";
 		String[] cpuInfoKey_array=null;
 		Map<String,String[]> cpusInfo_map=new HashMap<String,String[]>();
 		int devMapKey=0;
 		String tmpInfo="";
-		
+
 		try{
 			for(String str:cpuInfo_array){
 				Log.writeLog("debug", "str's length:"+str.length()+",str:"+str);
@@ -191,10 +191,10 @@ public class GetOsInfo {
 		}catch(Exception e){
 			Log.writeLog("error", new GetExceptionDetalInfo().getExceptionDetail(e));
 		}
-		
+
 		String cpuFrameWork=new GetSpecialDelimiterStr().getSpecialStr(cpuInfo_array[0], delimiter).split(delimiter)[4];
-		
-		//×é×°json×Ö·û´®
+
+		//ç»„è£…jsonå­—ç¬¦ä¸²
 		Log.writeLog("debug","cpuFrameWork:"+cpuFrameWork);
 		cpuJsonInfo+="\"cpuFrameWork\":\""+cpuFrameWork+"\",\"cpuCount\":\""+(devMapKey-1)+"\",\"cpuLoad\":{";
 		for(int i=0;i<devMapKey;i++){
@@ -207,14 +207,14 @@ public class GetOsInfo {
 			cpuJsonInfo+="}";
 			if(i<devMapKey-1)cpuJsonInfo+=",";
 		}
-		
+
 		cpuJsonInfo+="}";
 		Log.writeLog("debug", "cpuJsonInfo:{"+cpuJsonInfo+"}");
 		return "\"cpuInfo\":{"+cpuJsonInfo+"}";
 	}
-	
+
 	/**
-	 * »ñÈ¡ÄÚ´æĞÅÏ¢ 
+	 * è·å–å†…å­˜ä¿¡æ¯
 	 * @return
 	 */
 	private String getMemInfo(){
@@ -222,7 +222,7 @@ public class GetOsInfo {
 		String memCommand=ConfigData.memCommand;
 		String memInfo_str=new ExecShellCmd().exec(memCommand);
 		String[] memInfo_array=memInfo_str.split(ConfigData.newLineSeparator);
-		
+
 		String memInfoKey="";
 		String tmpMemInfo="";
 		String[] memInfoKey_array=null;
@@ -261,13 +261,13 @@ public class GetOsInfo {
 		}catch(Exception e){
 			Log.writeLog("error", new GetExceptionDetalInfo().getExceptionDetail(e));
 		}
-		
-		//ÅĞ¶Ï½á¹û½âÎöÊÇ·ñÕıÈ·
+
+		//åˆ¤æ–­ç»“æœè§£ææ˜¯å¦æ­£ç¡®
 		if(memInfoKey_array.length != memsInfo_map.get("Mem").length-1){
 			Log.writeLog("error", "get memInfo is wrong! memInfoKey_array=["+memInfoKey+"],memValueStr="+tmpMemInfo);
 		}
-		
-		//×é×°json
+
+		//ç»„è£…json
 		Log.writeLog("debug", "memInfoKey_array's length:"+memInfoKey_array.length+",Mem's length:"+memsInfo_map.get("Mem").length);
 		for(int i=0;i<memInfoKey_array.length;i++){
 			Log.writeLog("debug", "memInfoKey_array:"+memInfoKey_array[i]+",Mem:"+memsInfo_map.get("Mem")[i+1]);
@@ -275,7 +275,7 @@ public class GetOsInfo {
 		}
 		memJsonInfo+="\"-/+buf/cac-used\":\""+memsInfo_map.get("-/+")[2]+"\",\"-/+buf/cac-free\":\""+memsInfo_map.get("-/+")[3]+"\",";
 		memJsonInfo+="\"Swap-total\":\""+memsInfo_map.get("Swap")[1]+"\",\"Swap-used\":\""+memsInfo_map.get("Swap")[2]+"\",\"Swap-free\":\""+memsInfo_map.get("Swap")[3]+"\"";
-		
+
 		Log.writeLog("debug", "memJsonInfo:"+"\"memInfo\":{"+memJsonInfo+"}");
 		return "\"memsInfo\":{"+memJsonInfo+"}";
 	}

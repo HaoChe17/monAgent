@@ -7,18 +7,18 @@ import utils.ExecShellCmd;
 import utils.GetSpecialDelimiterStr;
 import utils.Log;
 /**
- * »ñÈ¡JVMµÄ¼à¿ØĞÅÏ¢
+ * è·å–JVMçš„ç›‘æ§ä¿¡æ¯
  * @author chehao
- * @version 2017Äê9ÔÂ27ÈÕ ÏÂÎç10:00:56
+ * @version 2017å¹´9æœˆ27æ—¥ ä¸‹åˆ10:00:56
  */
 public class GetJvmInfo {
 	private  String jvmInfo="";
 	private  String pid=null;
 	private  String privateJstatCmd=null;
 	private static String delimiter=ConfigData.delimiter;
-	
+
 	/**
-	 * »ñÈ¡JVMĞÅÏ¢µÄÎ¨Ò»·½·¨¡£»ñÈ¡ËùÓĞµÄjvmĞÅÏ¢£¬ÕûÀíÎªjson£¬²¢·µ»Ø¡£
+	 * è·å–JVMä¿¡æ¯çš„å”¯ä¸€æ–¹æ³•ã€‚è·å–æ‰€æœ‰çš„jvmä¿¡æ¯ï¼Œæ•´ç†ä¸ºjsonï¼Œå¹¶è¿”å›ã€‚
 	 * @param jstatCmd
 	 * @param appPid
 	 * @return
@@ -29,19 +29,19 @@ public class GetJvmInfo {
 		jvmInfo+=getGCInfo();
 		return "{"+jvmInfo+"}";
 	}
-	
+
 	/**
-	 * »ñÈ¡GCµÄ¼à¿ØÊı¾İ
+	 * è·å–GCçš„ç›‘æ§æ•°æ®
 	 */
 	private String getGCInfo(){
 		String gcJsonInfo="";
 		String gcCommand=privateJstatCmd+pid;
 		Log.writeLog("debug", "the gcCommand of "+pid+" is:"+gcCommand);
-		//»ñÈ¡jstat -gcÃüÁîµÄ·µ»Ø½á¹û
+		//è·å–jstat -gcå‘½ä»¤çš„è¿”å›ç»“æœ
 		String gcInfo=new ExecShellCmd().exec(gcCommand);
 		Log.writeLog("debug", "the gcInfo of "+pid+" is:"+gcInfo);
 
-		//½âÎöGCÃüÁî·µ»ØµÄ½á¹û£¬ÌáÈ¡³öÂú×ãÒªÇóµÄ½á¹û
+		//è§£æGCå‘½ä»¤è¿”å›çš„ç»“æœï¼Œæå–å‡ºæ»¡è¶³è¦æ±‚çš„ç»“æœ
 		String[] gc_array=gcInfo.split(ConfigData.newLineSeparator);
 		String[] gcKey_array=null;
 		String[] gcValue_array=null;
@@ -61,18 +61,18 @@ public class GetJvmInfo {
 				continue;
 			}
 		}
-	
-		
+
+
 		if(gcKey_array.length != gcValue_array.length){
 			Log.writeLog("error", "get gcInfo is wrong! gcKeyInfo=["+gcKeyStr+"],gcValueStr="+gcValueStr);
 		}
-		//°Ñ½á¹û×é×°³Éjson¸ñÊ½µÄ×Ö·û´®
+		//æŠŠç»“æœç»„è£…æˆjsonæ ¼å¼çš„å­—ç¬¦ä¸²
 		for(int i=0;i<gcKey_array.length;i++){
 			gcJsonInfo=gcJsonInfo+'"'+gcKey_array[i]+"\":"+'"'+gcValue_array[i]+'"';
 			if(i!=gcKey_array.length-1)gcJsonInfo+=",";
 		}
 		Log.writeLog("debug","gcJsonInfo:{"+gcJsonInfo+"}");
 		return gcJsonInfo;
-		
+
 	}
 }

@@ -1,50 +1,50 @@
 package utils;
 
 /**
- * ÅäÖÃµÄÉèÖÃ
+ * é…ç½®çš„è®¾ç½®
  * @author chehao
- * @version 2017Äê10ÔÂ8ÈÕ ÉÏÎç8:35:14
+ * @version 2017å¹´10æœˆ8æ—¥ ä¸Šåˆ8:35:14
  */
 public class ConfigData {
-	
-	//È«¾ÖÅäÖÃ
-	public static String delimiter="\t";//´¦Àí»ñÈ¡µÄ¼à¿ØÊı¾İÊ±£¬ĞèÒªÌæ»»³ÉµÄ·Ö¸ô·û
-	public static String newLineSeparator=System.getProperty("line.separator");//ÏµÍ³»»ĞĞ·û
-	
-	//»ñÈ¡JVMĞÅÏ¢
-	public static String jstatBin="/bin/jstat -gc ";//Ö´ĞĞµÄjstatÃüÁî
-	public static String jvmMonitorType="jvm";//ÅĞ¶ÏĞèÒª»ñÈ¡µÄ¼à¿ØÊı¾İÊÇ·ñÎªjvm
-	public static String gcValueregular="^\\d{3}";//ÅĞ¶ÏÊÇ·ñÎªGCÊı¾İĞĞµÄÕıÔò±í´ïÊ½¡£´ËĞĞµÄÇ°Èı¸ö×Ö·û·ñ¾ùÎªÊı×Ö
-	public static String gcKeyKeyWords="S0C";//ÅĞ¶ÏÊÇ·ñÎªGCÁĞÃûĞĞµÄ¹Ø¼ü×Ö¡£´ËĞĞµÄµÚ2µ½4¸ö×Ö·û´®Îª¡°S0C¡±
-	
-	//»ñÈ¡osĞÅÏ¢
-	public static String osMonitorType="os";//ÅĞ¶ÏĞèÒª»ñÈ¡µÄ¼à¿ØÊı¾İÊÇ·ñÎªos
-	public static String devCommand="iostat -dx -k -c 1 2";//iostatÃüÁî£¬ÓÃÓÚ»ñÈ¡´ÅÅÌIOĞÅÏ¢
-	public static String devKeyPrefix="Device";//ÅĞ¶ÏÊÇ·ñÎª´ÅÅÌÁĞÃûĞĞµÄ¹Ø¼ü×Ö¡£´ËĞĞÒÔ¡°Device¡±×Ö·û´®¿ªÍ·
-	public static String memCommand="free -k";//freeÃüÁî£¬ÓÃÓÚ»ñÈ¡ÏµÍ³ÄÚ´æĞÅÏ¢
-	public static String memKeyKeyWords="total";//ÅĞ¶ÏÊÇ·ñÎªÄÚ´æÊı¾İ£¨freeÃüÁî£©µÄÁĞÃûĞĞ¡£´ËĞĞÒÔ°üº¬¡°total¡±¹Ø¼ü×Ö
-	public static String memMemValueKeyWords="Mem";//ÅĞ¶ÏÊÇ·ñÎªÄÚ´æÊı¾İ£¨freeÃüÁî£©µÄMemÊı¾İĞĞ¡£´ËĞĞÒÔ°üº¬Mem¹Ø¼ü×Ö
-	public static String memBcValueKeyWords="buffers/cache";//ÅĞ¶ÏÊÇ·ñÎªÄÚ´æÊı¾İ£¨freeÃüÁî£©µÄ¡°buffers/cache¡±Êı¾İĞĞ¡£´ËĞĞÒÔ°üº¬¡°buffers/cache¡±¹Ø¼ü×Ö
-	public static String memSwapValueKeyWords="Swap";//ÅĞ¶ÏÊÇ·ñÎªÄÚ´æÊı¾İ£¨freeÃüÁî£©µÄ¡°Swap¡±Êı¾İĞĞ¡£´ËĞĞÒÔ°üº¬¡°Swap¡±¹Ø¼ü×Ö
-	public static String cpuCommand="mpstat -P ALL 1 1";//mpstatÃüÁî
-	public static String cpuKeyPrefixKeyWords="Average:";//cpu¼à¿ØÊı¾İµÄĞĞÒÔaverage¿ªÍ·
-	public static String cpuKeyKeyWords="%iowait";//CPUÁĞÃûËùÔÚµÄĞĞ°üº¬ÁË¡°%iowait¡±×Ö·û´®
-	public static String diskSpaceCommand="df -h";//»ñÈ¡´ÅÅÌ¿Õ¼ä´óĞ¡µÄÃüÁî
-	public static String diskSpaceKeyPrefixKeyWords="Filesystem";//´ÅÅÌ¿Õ¼ä´óĞ¡Êı¾İµÄÁĞÃûÒÔ¡°Filesystem¡±×Ö·û´®¿ªÍ· 
-	
-	//»ñÈ¡applicationĞÅÏ¢
-	public static String appMonitorType="app";//ÅĞ¶ÏĞèÒª»ñÈ¡µÄ¼à¿ØÊı¾İÊÇ·ñÎªapp
-	public static String appPid;//½ø³Ìpid
-	public static String pidstatCmdPrefix="pidstat -udr -h -p ";//pidstatÇ°×º
-	public static String pidstatCmdPrePost=" 1 1";//pidstatºó×º
-	public static String appKeyLinePrefix="#";//ÓÃÓÚÅĞ¶ÏpidstatµÄÊä³öÖĞ£¬ÊÇ·ñÎªÁĞÃûËùÔÚĞĞ£¬´ËĞĞÒÔ¡°#¡±¿ªÍ·
-	public static String appValueLinePrefix="150";//ÓÃÓÚÅĞ¶ÏpidstatµÄÊä³öÖĞ£¬ÊÇ·ñÎªÊı¾İËùÔÚĞĞ£¬´ËĞĞÒÔUnixÊ±¼ä´Á¿ªÍ·
-	
-	/**¶ÁÈ¡ÅäÖÃÊı¾İ
-	 * 
+
+	//å…¨å±€é…ç½®
+	public static String delimiter="\t";//å¤„ç†è·å–çš„ç›‘æ§æ•°æ®æ—¶ï¼Œéœ€è¦æ›¿æ¢æˆçš„åˆ†éš”ç¬¦
+	public static String newLineSeparator=System.getProperty("line.separator");//ç³»ç»Ÿæ¢è¡Œç¬¦
+
+	//è·å–JVMä¿¡æ¯
+	public static String jstatBin="/bin/jstat -gc ";//æ‰§è¡Œçš„jstatå‘½ä»¤
+	public static String jvmMonitorType="jvm";//åˆ¤æ–­éœ€è¦è·å–çš„ç›‘æ§æ•°æ®æ˜¯å¦ä¸ºjvm
+	public static String gcValueregular="^\\d{3}";//åˆ¤æ–­æ˜¯å¦ä¸ºGCæ•°æ®è¡Œçš„æ­£åˆ™è¡¨è¾¾å¼ã€‚æ­¤è¡Œçš„å‰ä¸‰ä¸ªå­—ç¬¦å¦å‡ä¸ºæ•°å­—
+	public static String gcKeyKeyWords="S0C";//åˆ¤æ–­æ˜¯å¦ä¸ºGCåˆ—åè¡Œçš„å…³é”®å­—ã€‚æ­¤è¡Œçš„ç¬¬2åˆ°4ä¸ªå­—ç¬¦ä¸²ä¸ºâ€œS0Câ€
+
+	//è·å–osä¿¡æ¯
+	public static String osMonitorType="os";//åˆ¤æ–­éœ€è¦è·å–çš„ç›‘æ§æ•°æ®æ˜¯å¦ä¸ºos
+	public static String devCommand="iostat -dx -k -c 1 2";//iostatå‘½ä»¤ï¼Œç”¨äºè·å–ç£ç›˜IOä¿¡æ¯
+	public static String devKeyPrefix="Device";//åˆ¤æ–­æ˜¯å¦ä¸ºç£ç›˜åˆ—åè¡Œçš„å…³é”®å­—ã€‚æ­¤è¡Œä»¥â€œDeviceâ€å­—ç¬¦ä¸²å¼€å¤´
+	public static String memCommand="free -k";//freeå‘½ä»¤ï¼Œç”¨äºè·å–ç³»ç»Ÿå†…å­˜ä¿¡æ¯
+	public static String memKeyKeyWords="total";//åˆ¤æ–­æ˜¯å¦ä¸ºå†…å­˜æ•°æ®ï¼ˆfreeå‘½ä»¤ï¼‰çš„åˆ—åè¡Œã€‚æ­¤è¡Œä»¥åŒ…å«â€œtotalâ€å…³é”®å­—
+	public static String memMemValueKeyWords="Mem";//åˆ¤æ–­æ˜¯å¦ä¸ºå†…å­˜æ•°æ®ï¼ˆfreeå‘½ä»¤ï¼‰çš„Memæ•°æ®è¡Œã€‚æ­¤è¡Œä»¥åŒ…å«Memå…³é”®å­—
+	public static String memBcValueKeyWords="buffers/cache";//åˆ¤æ–­æ˜¯å¦ä¸ºå†…å­˜æ•°æ®ï¼ˆfreeå‘½ä»¤ï¼‰çš„â€œbuffers/cacheâ€æ•°æ®è¡Œã€‚æ­¤è¡Œä»¥åŒ…å«â€œbuffers/cacheâ€å…³é”®å­—
+	public static String memSwapValueKeyWords="Swap";//åˆ¤æ–­æ˜¯å¦ä¸ºå†…å­˜æ•°æ®ï¼ˆfreeå‘½ä»¤ï¼‰çš„â€œSwapâ€æ•°æ®è¡Œã€‚æ­¤è¡Œä»¥åŒ…å«â€œSwapâ€å…³é”®å­—
+	public static String cpuCommand="mpstat -P ALL 1 1";//mpstatå‘½ä»¤
+	public static String cpuKeyPrefixKeyWords="Average:";//cpuç›‘æ§æ•°æ®çš„è¡Œä»¥averageå¼€å¤´
+	public static String cpuKeyKeyWords="%iowait";//CPUåˆ—åæ‰€åœ¨çš„è¡ŒåŒ…å«äº†â€œ%iowaitâ€å­—ç¬¦ä¸²
+	public static String diskSpaceCommand="df -h";//è·å–ç£ç›˜ç©ºé—´å¤§å°çš„å‘½ä»¤
+	public static String diskSpaceKeyPrefixKeyWords="Filesystem";//ç£ç›˜ç©ºé—´å¤§å°æ•°æ®çš„åˆ—åä»¥â€œFilesystemâ€å­—ç¬¦ä¸²å¼€å¤´
+
+	//è·å–applicationä¿¡æ¯
+	public static String appMonitorType="app";//åˆ¤æ–­éœ€è¦è·å–çš„ç›‘æ§æ•°æ®æ˜¯å¦ä¸ºapp
+	public static String appPid;//è¿›ç¨‹pid
+	public static String pidstatCmdPrefix="pidstat -udr -h -p ";//pidstatå‰ç¼€
+	public static String pidstatCmdPrePost=" 1 1";//pidstatåç¼€
+	public static String appKeyLinePrefix="#";//ç”¨äºåˆ¤æ–­pidstatçš„è¾“å‡ºä¸­ï¼Œæ˜¯å¦ä¸ºåˆ—åæ‰€åœ¨è¡Œï¼Œæ­¤è¡Œä»¥â€œ#â€å¼€å¤´
+	public static String appValueLinePrefix="150";//ç”¨äºåˆ¤æ–­pidstatçš„è¾“å‡ºä¸­ï¼Œæ˜¯å¦ä¸ºæ•°æ®æ‰€åœ¨è¡Œï¼Œæ­¤è¡Œä»¥Unixæ—¶é—´æˆ³å¼€å¤´
+
+	/**è¯»å–é…ç½®æ•°æ®
+	 *
 	 */
 	public static void initConfigData(){
-		
+
 	}
-	
+
 }

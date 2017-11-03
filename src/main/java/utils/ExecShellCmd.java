@@ -5,12 +5,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * Ö´ĞĞLinux-shellÃüÁî£¬²¢·µ»ØÖ´ĞĞ½á¹û
+ * æ‰§è¡ŒLinux-shellå‘½ä»¤ï¼Œå¹¶è¿”å›æ‰§è¡Œç»“æœ
  * @author chehao
- * @version 2017Äê9ÔÂ24ÈÕ ÉÏÎç11:28:36
+ * @version 2017å¹´9æœˆ24æ—¥ ä¸Šåˆ11:28:36
  */
 public class ExecShellCmd {
-	
+
 	public String exec(String shellCmd){
 		String[] cmd=new String[]{"/bin/sh","-c",shellCmd};
 		Process ps=null;
@@ -22,8 +22,8 @@ public class ExecShellCmd {
 			Log.writeLog("error", e.getMessage());
 			e.printStackTrace();
 		}
-		
-		BufferedReader br = new BufferedReader(new InputStreamReader(ps.getInputStream())); 
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(ps.getInputStream()));
 		StringBuffer sb = new StringBuffer();
 		String line;
 		try {
@@ -38,7 +38,7 @@ public class ExecShellCmd {
 			Log.writeLog("error", e.getMessage());
 			e.printStackTrace();
 		}
-		
+
 		return sb.toString();
-	} 
+	}
 }
